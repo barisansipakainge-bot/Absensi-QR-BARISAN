@@ -1,0 +1,274 @@
+/*=============== LOGIN ===============*/
+.login {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  color: #fff;
+  background: #082f52;
+  overflow: hidden;
+}
+
+.lcard {
+  position: relative;
+  width: min(26rem, 100%);
+  background: var(--bg);
+  color: var(--t);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.lhead {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.lhead h1 {
+  font-size: 1.6rem;
+  margin: 0.6rem 0 0.3rem;
+}
+
+.lhead p {
+  color: var(--t2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.logo-img.big {
+  width: 11rem;
+  height: 11rem;
+  margin-inline: auto;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 6px 18px rgba(8, 47, 82, 0.18);
+}
+
+/* A. Pita sulapa eppa' */
+.pita {
+  height: 19px;
+  margin: -2rem -1.5rem 1.5rem;
+  background-color: #0b3f6b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 20 16'%3E%3Cpolygon points='10,2 18,8 10,14 2,8' fill='none' stroke='%23c5d92d' stroke-width='1'/%3E%3Cpolygon points='10,5.5 13,8 10,10.5 7,8' fill='%23c5d92d'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 20px 16px;
+  border-top: 1.5px solid #c5d92d;
+  border-bottom: 1.5px solid #c5d92d;
+}
+
+.pita.bawah {
+  margin: 1.2rem -1.5rem -2rem;
+}
+
+/* C. Pembatas nilai SIPAKAINGE */
+.pemisah {
+  text-align: center;
+  margin: 0.4rem 0 0.7rem;
+}
+
+.pemisah .lontara {
+  display: block;
+  font-family: "Noto Sans Buginese", serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  color: #2b8fc7;
+  text-wrap: balance;
+}
+
+.lerr {
+  color: #b03a2e;
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+}
+
+/* Ikon di dalam kolom isian login */
+.field {
+  position: relative;
+  display: block;
+}
+
+.field .i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  translate: 0 -50%;
+  color: var(--t2);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.field .join__input {
+  width: 100%;
+  padding-left: 3rem;
+}
+
+.field:focus-within .i {
+  color: var(--c);
+}
+
+/* Efek kilau pada tombol Masuk */
+.button.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.button.shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.button.shine:hover::after {
+  animation: shine 0.7s ease;
+}
+
+@keyframes shine {
+  from {
+    left: -75%;
+  }
+  to {
+    left: 125%;
+  }
+}
+
+/* Isi tombol yang ikut bergeser saat diklik */
+.btn-in {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Ikon kapal pinisi pada tombol Masuk */
+.pn {
+  width: 2.6rem;
+  height: 1.625rem;
+  flex: none;
+}
+
+.button.shine {
+  justify-content: center;
+}
+
+.button.shine.go::after {
+  animation: shine-go 0.7s ease;
+}
+
+.button.shine.go .btn-in {
+  animation: slide-go 0.7s ease forwards;
+}
+
+@keyframes shine-go {
+  from {
+    left: -75%;
+  }
+  to {
+    left: 125%;
+  }
+}
+
+@keyframes slide-go {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(var(--dx, 0px));
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(var(--dx, 0px));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button.shine.go::after,
+  .button.shine.go .btn-in {
+    animation: none;
+  }
+}
+
+.lacc {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.lacc summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.lacc li {
+  margin: 0.5rem 0;
+  color: var(--t2);
+  list-style: none;
+}
+
+.lacc .tools {
+  margin: 0.6rem 0;
+}
+
+.lfoot {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--t2);
+}
+
+.out {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  font: 600 0.8rem inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#who {
+  display: none;
+  font-size: 0.78rem;
+  opacity: 0.9;
+  max-width: 18rem;
+  text-align: right;
+  line-height: 1.3;
+}
+
+@media (min-width: 900px) {
+  #who {
+    display: block;
+  }
+}
+
+/* ===== PELENGKAP (biasanya sudah ada di CSS utama aplikasi lama) ===== */
+.login{--bg:#ffffff;--t:#0d2238;--t2:#5b6b7c;--c:#1d7fc0}
+.login .home__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.login .home__blur{position:absolute;inset:0;background:rgba(8,47,82,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:0}
+.login .lcard{z-index:1}
+.field .i{width:1.25rem;height:1.25rem}
+.mform{display:grid;gap:1rem}
+.mform label{display:grid;gap:.4rem;font-size:.9rem;font-weight:600;color:var(--t);margin:0}
+.join__input{width:100%;font:inherit;font-size:1rem;color:var(--t);background:#f4f8fb;border:1px solid #cfdbe6;border-radius:.7rem;padding:.85rem 1rem;outline:none;box-shadow:none;transition:border-color .2s,box-shadow .2s}
+.join__input:focus{border-color:var(--c);box-shadow:0 0 0 3px rgba(29,127,192,.18)}
+.mform label.chk{display:flex;align-items:center;gap:.5rem;font-weight:400;color:var(--t2)}
+.mform label.chk input{width:auto;padding:0;box-shadow:none;accent-color:var(--c)}
+.button{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-weight:600;color:#fff;background:#0b3f6b;border:0;border-radius:.8rem;padding:.8rem 1.4rem;cursor:pointer;transition:background .2s,transform .2s}
+.button:hover{background:#0e4f86}
+.button:active{transform:scale(.98)}
+.button .pn{color:#c5d92d}

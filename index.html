@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Absensi · Temu Tokoh & Launching BARISAN Sipakainge</title>
+<link rel="icon" href="Glossy Logo Barisan.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&family=Noto+Sans+Buginese&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<!-- ikon -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V8a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="pinisi" viewBox="0 0 64 40"><path d="M4 29h56l-7 8H12z" fill="currentColor"/><path d="M31 3v23H15z" fill="currentColor"/><path d="M34 7v19h17z" fill="currentColor"/><path d="M31 3l6 2-6 2z" fill="currentColor"/></symbol>
+</svg>
+
+<!--=============== LOGIN ===============-->
+<section class="login" id="login" hidden>
+  <img src="INDAH.jpeg" alt="" class="home__bg" onerror="this.style.display='none'" />
+  <div class="home__blur"></div>
+  <div class="lcard">
+    <div class="pita" aria-hidden="true"></div>
+
+    <div class="lhead">
+      <div class="logo-lima">
+        <img src="Logo Lingkaran HD.jpeg" alt="Logo BARISAN-SIPAKAINGE" class="logo-img big" />
+      </div>
+      <h1>SI-BARISAN</h1>
+      <div class="pemisah">
+        <span class="nilai lontara" lang="bug">ᨔᨗᨄᨀᨈᨕᨘ · ᨔᨗᨄᨀᨒᨙᨅᨗ · ᨔᨗᨄᨀᨕᨗᨂᨙ</span>
+      </div>
+      <p>Masuk untuk membuka layar acara dan input manual Gerakan BARISAN-SIPAKAINGE.</p>
+    </div>
+
+    <form id="lf" class="join__form mform" novalidate style="max-width: none">
+      <label>
+        Nama pengguna
+        <span class="field">
+          <svg class="i"><use href="#user" /></svg>
+          <input class="join__input" id="lu" autocomplete="username" autocapitalize="none" spellcheck="false" />
+        </span>
+      </label>
+      <label>
+        Kata sandi
+        <span class="field">
+          <svg class="i"><use href="#lock" /></svg>
+          <input class="join__input" id="lp" type="password" autocomplete="current-password" />
+        </span>
+      </label>
+      <label class="chk"><input type="checkbox" id="lshow" /> Tampilkan kata sandi</label>
+      <p class="lerr" id="lerr" role="alert"></p>
+      <button class="button shine" type="submit" aria-label="Masuk" title="Masuk">
+        <span class="btn-in">
+          <svg class="pn" aria-hidden="true"><use href="#pinisi" /></svg>
+        </span>
+      </button>
+    </form>
+    <p class="lfoot">© SI-BARISAN · Kanwil Kemenag Sulawesi Selatan</p>
+  </div>
+</section>
+
+<div id="app" hidden>
+  <video id="bgv" autoplay muted loop playsinline preload="auto">
+  <source src="latar.mp4" type="video/mp4">
+</video>
+<div id="bgv-shade"></div>
+<button id="btnSuara" type="button">Nyalakan suara</button>
+<div class="glow" style="left:-120px;top:30%;width:460px;height:460px;background:radial-gradient(circle,rgba(47,168,74,.32),transparent 65%)"></div>
+<div class="glow" style="right:-120px;top:4%;width:440px;height:440px;background:radial-gradient(circle,rgba(42,151,240,.26),transparent 65%)"></div>
+<div class="glow" style="right:10%;bottom:-160px;width:420px;height:420px;background:radial-gradient(circle,rgba(233,181,43,.2),transparent 65%)"></div>
+
+<header>
+  <div id="sc"><img src="PELUNCURAN_PROGRAM.png" alt="Peluncuran Program BARISAN Sipakainge"></div>
+  <div id="isl">
+    <div class="il ia"><span class="dt"></span><span id="it">BARISAN Sipakainge</span></div>
+    <div class="il ib">
+      <div class="av" id="iav" style="width:40px;height:40px;font-size:16px"></div>
+      <div class="im"><div id="in"></div><div id="is"></div></div>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9be8b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+    </div>
+  </div>
+  <div class="ttl">
+    <div class="brand">
+      <div class="lg"><img src="Logo kanwil kemenag sulsel.png" alt="Logo Kemenag" onerror="this.parentNode.style.display='none'"></div>
+      <div class="lg"><img src="Glossy Logo Barisan.png" alt="Logo BARISAN Sipakainge" onerror="this.parentNode.style.display='none'"></div>
+      <div class="inst">Kantor Wilayah Kementerian Agama<br>Provinsi Sulawesi Selatan</div>
+    </div>
+    <h1 class="serif">Temu <span class="gold">Tokoh</span></h1>
+    <p>dirangkaikan Launching BARISAN Sipakainge</p>
+  </div>
+</header>
+
+<!-- MENU PANITIA -->
+<main id="v-menu" hidden>
+  <section class="glass card" style="text-align:center">
+    <div class="lbl">Menu panitia</div>
+    <h2 class="serif" style="font-size:26px;line-height:1.25">Selamat datang, <span class="gold" id="sapa"></span></h2>
+    <p style="color:var(--mut);font-size:14px;margin:10px 0 20px">Pilih tampilan yang akan dibuka.</p>
+    <a class="btn" href="?mode=layar" style="display:block;text-decoration:none;margin-bottom:12px">Buka layar acara</a>
+    <a class="btn" href="?mode=manual" style="display:block;text-decoration:none">Input manual</a>
+  </section>
+</main>
+
+<!-- LAYAR ACARA -->
+<main id="v-layar" hidden>
+  <section class="glass card">
+    <div class="lbl">Scan untuk hadir</div>
+    <div class="qt"><svg id="qr" viewBox="0 0 10 10" aria-label="Kode QR kehadiran"></svg></div>
+    <div style="font-size:13px;color:var(--mut);text-align:center;margin:12px 0 7px">Buka kamera HP, arahkan ke kode ini</div>
+    <div style="font-size:13px;text-align:center;margin-bottom:7px">Kode berganti dalam <span id="cl" class="gold" style="font-weight:500">0:00</span></div>
+    <div class="bar"><i id="cbar" style="width:100%;transition:width 1s linear"></i></div>
+    <div style="margin-top:22px;text-align:center">
+      <div id="tot" class="serif gold" style="font-size:54px;line-height:1">0</div>
+      <div id="totk" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:6px">hadir</div>
+    </div>
+  </section>
+  <section class="glass card" style="min-width:0">
+    <div class="lbl">Baru saja hadir</div>
+    <div id="ls"></div>
+  </section>
+  <section class="glass card c3" style="min-width:0">
+    <div class="lbl">Kehadiran per kategori</div>
+    <div id="katList"></div>
+  </section>
+</main>
+
+<!-- HP PESERTA / INPUT MANUAL -->
+<main id="v-hp" hidden>
+  <section class="glass card" id="form">
+    <div class="lbl" id="evt">Konfirmasi kehadiran</div>
+    <h2 class="serif" style="font-size:26px;line-height:1.2">Isi <span class="gold">kehadiran</span></h2>
+    <label for="selKat">Kategori undangan</label>
+    <select id="selKat"><option value="">Memuat kategori…</option></select>
+    <div id="instWrap"></div>
+    <div id="namaWrap"></div>
+    <div id="err"></div>
+    <button class="btn" id="go">Hadir sekarang</button>
+  </section>
+  <section class="glass card" id="done" hidden style="text-align:center">
+    <div id="ck"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#9be8b4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <div class="serif" style="font-size:26px">Terima kasih</div>
+    <div id="dn" class="serif gold" style="font-size:22px;margin-top:6px"></div>
+    <div id="dj" style="font-size:14px;color:var(--mut);margin-top:10px"></div>
+    <div style="font-size:13px;color:var(--mut);margin-top:22px">Kamu bisa menutup halaman ini.</div>
+  </section>
+</main>
+
+<div class="ft">
+  <div>Kantor Wilayah Kementerian Agama Provinsi Sulawesi Selatan · Gerakan BARISAN Sipakainge</div>
+  <div id="akun" hidden style="margin-top:14px;display:flex;justify-content:center;align-items:center;gap:12px">
+    <span id="who"></span>
+    <button class="out" id="btnKeluar" type="button">Keluar</button>
+  </div>
+</div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
